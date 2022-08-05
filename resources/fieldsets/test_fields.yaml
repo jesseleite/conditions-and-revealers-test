@@ -1,0 +1,88 @@
+title: 'Test Fields'
+fields:
+  -
+    handle: revvy
+    field:
+      mode: toggle
+      display: Revvy
+      type: revealer
+      icon: revealer
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+  -
+    handle: revvied
+    field:
+      input_type: text
+      antlers: false
+      display: Revvied
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      if:
+        revvy: 'equals true'
+  -
+    handle: toggy
+    field:
+      default: false
+      display: Toggy
+      type: toggle
+      icon: toggle
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+  -
+    handle: toggied
+    field:
+      input_type: text
+      antlers: false
+      display: Toggied
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      if:
+        toggy: 'equals true'
+  -
+    handle: toggied_always_save
+    field:
+      input_type: text
+      antlers: false
+      display: 'Toggied Always Save'
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      always_save: true
+      if:
+        toggy: 'equals true'
+  -
+    handle: name
+    field:
+      input_type: text
+      antlers: false
+      display: Name
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+  -
+    handle: multi
+    field:
+      input_type: text
+      antlers: false
+      display: Multi
+      type: text
+      icon: text
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      if:
+        revvy: 'equals true'
+        toggy: 'equals true'
+        name: 'equals Jesse'

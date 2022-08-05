@@ -1,0 +1,185 @@
+title: 'Test Fields'
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: top_level_test
+        field:
+          display: 'Top Level Test'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        import: test_fields
+      -
+        handle: replicator_test
+        field:
+          display: 'Replicator Test'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: reppy
+        field:
+          collapse: false
+          previews: true
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  import: test_fields
+          display: Reppy
+          type: replicator
+          icon: replicator
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: grid_test
+        field:
+          display: 'Grid Test'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: griddy
+        field:
+          fields:
+            -
+              import: test_fields
+          mode: table
+          reorderable: true
+          display: Griddy
+          type: grid
+          icon: grid
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: bard_test
+        field:
+          display: 'Bard Test'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: bardo
+        field:
+          always_show_set_button: false
+          previews: true
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  import: test_fields
+          buttons:
+            - h2
+            - h3
+            - bold
+            - italic
+            - unorderedlist
+            - orderedlist
+            - removeformat
+            - quote
+            - anchor
+            - image
+            - table
+          save_html: false
+          toolbar_mode: fixed
+          link_noopener: false
+          link_noreferrer: false
+          target_blank: false
+          reading_time: false
+          fullscreen: true
+          allow_source: true
+          enable_input_rules: true
+          enable_paste_rules: true
+          antlers: false
+          display: Bardo
+          type: bard
+          icon: bard
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: deeply_nested_with_fieldset_prefix_test
+        field:
+          display: 'Deeply Nested With Fieldset Prefix Test'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: deep_reppy
+        field:
+          collapse: false
+          previews: true
+          sets:
+            new_set:
+              display: 'New Set'
+              fields:
+                -
+                  handle: griddy_in_reppy
+                  field:
+                    fields:
+                      -
+                        import: test_fields
+                        prefix: prefixed_
+                    mode: table
+                    reorderable: true
+                    display: 'Griddy In Reppy'
+                    type: grid
+                    icon: grid
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    always_save: false
+          display: 'Deep Reppy'
+          type: replicator
+          icon: replicator
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          validate:
+            - required
+      -
+        handle: topics
+        field:
+          type: terms
+          taxonomies:
+            - topics
+          display: Topics
+          mode: select
